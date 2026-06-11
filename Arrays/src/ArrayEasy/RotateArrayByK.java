@@ -1,3 +1,5 @@
+package ArrayEasy;
+
 import java.util.Arrays;
 
 public class RotateArrayByK {

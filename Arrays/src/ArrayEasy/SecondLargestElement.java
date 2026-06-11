@@ -1,3 +1,5 @@
+package ArrayEasy;
+
 public class SecondLargestElement {
 
     public int secondLargestElement(int[] nums) {

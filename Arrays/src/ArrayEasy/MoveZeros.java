@@ -1,3 +1,5 @@
+package ArrayEasy;
+
 import java.util.Arrays;
 
 public class MoveZeros {
@@ -36,12 +38,11 @@ public class MoveZeros {
         nums[j] = temp;
     }
 
-
-    public static void moveZeros(int[] nums){
+    public static void moveZeros(int[] nums) {
         int j = 0;
-        for(int i = 0; i < nums.length; i++){
-            
-            if(nums[i] != 0){
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] != 0) {
                 swap(nums, i, j);
                 j++;
             }
