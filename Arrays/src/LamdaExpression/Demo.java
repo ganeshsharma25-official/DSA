@@ -47,7 +47,7 @@ public class Demo {
      * 
      * //stream api.
      * 
-     * 1. Can use the stream only once
+     * 1. Can use the stream only once after creating it.
      * 
      * 
      */
