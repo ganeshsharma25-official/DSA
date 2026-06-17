@@ -36,10 +36,72 @@ public class ThreeSum {
         return numsList;
     }
 
-    public static void main(String[] args) {
-        int[] nums = { -2, -1, 0, 1, 2 };
+    // two pointer approach
 
-        System.out.println(threeSum(nums).toString());
+    public static List<List<Integer>> threeSumII(int[] nums) {
+
+        Arrays.sort(nums);
+        List<List<Integer>> resultList = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int left = i + 1;
+            int right = nums.length - 1;
+            int prevLeft;
+            int prevRight;
+
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            while (left < right) {
+                if (nums[i] + nums[left] + nums[right] == 0) {
+
+                    List<Integer> temp = new ArrayList<>();
+                    temp.add(nums[i]);
+                    temp.add(nums[left]);
+                    temp.add(nums[right]);
+
+                    resultList.add(temp);
+
+                    prevLeft = nums[left];
+                    prevRight = nums[right];
+
+                    while (left < nums.length && nums[left] == prevLeft) {
+                        left++;
+                    }
+
+                    while (right > 0 && nums[right] == prevRight) {
+                        right--;
+                    }
+
+                } else if (nums[i] + nums[left] + nums[right] < 0) {
+
+                    prevLeft = nums[left];
+                    while (left < nums.length && nums[left] == prevLeft) {
+                        left++;
+                    }
+
+                } else if (nums[i] + nums[left] + nums[right] > 0) {
+
+                    prevRight = nums[right];
+                    while (right > 0 && nums[right] == prevRight) {
+                        right--;
+                    }
+
+                }
+
+            }
+
+        }
+
+        return resultList;
+
+    }
+
+    public static void main(String[] args) {
+        int[] nums = { 0, 0, 0 };
+
+        System.out.println(threeSumII(nums).toString());
     }
 
 }
