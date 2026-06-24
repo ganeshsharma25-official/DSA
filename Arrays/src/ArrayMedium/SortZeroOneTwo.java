@@ -21,7 +21,7 @@ public class SortZeroOneTwo {
     }
 
     // better solution
-
+    // TC O(2n)
     public int[] sortZeroOneTwoII(int[] nums) {
 
         int countZero = 0;
@@ -53,7 +53,7 @@ public class SortZeroOneTwo {
 
     // optimal solution
     // using three pointers. Algo name --> Dutch National Flag
-
+    // TC O(n)
     public int[] sortZeroOneTwoIII(int[] nums) {
 
         int low = 0;
