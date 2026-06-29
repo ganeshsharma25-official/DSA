@@ -3,7 +3,6 @@ package ArrayMedium;
 public class KadanesAlgorithm {
 
     public static void main(String[] args) {
-
         int[] nums = { 2, 3, 5, -2, 7, -4 };
         System.out.println(maxSubArrayII(nums));
         printMaxSubArray(nums);
