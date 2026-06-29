@@ -1,6 +1,7 @@
 package ArrayHard;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -71,16 +72,17 @@ public class NumberOfInversions {
     private long mergeSort(int[] nums, int low, int high) {
         long count = 0;
 
-        if (low == high) {
-            return 0;
+        // if (low == high) {
+        // return count;
+        // }
+        if (low < high) {
+            int mid = (low + high) / 2;
+
+            count = count + mergeSort(nums, low, mid);
+            count = count + mergeSort(nums, mid + 1, high);
+
+            count = count + merge(nums, low, mid, high);
         }
-
-        int mid = (low + high) / 2;
-
-        count = count + mergeSort(nums, low, mid);
-        count = count + mergeSort(nums, mid + 1, high);
-
-        count = count + merge(nums, low, mid, high);
 
         return count;
     }
@@ -93,14 +95,13 @@ public class NumberOfInversions {
         int right = mid + 1;
 
         while (left <= mid && right <= high) {
-
-            if (nums[left] > nums[right]) {
-                count = count + (mid - left + 1);
-                temp.add(right);
-                right++;
-            } else {
-                temp.add(left);
+            if (nums[left] <= nums[right]) {
+                temp.add(nums[left]);
                 left++;
+            } else {
+                temp.add(nums[right]);
+                right++;
+                count = count + (mid - left + 1);
             }
         }
 
@@ -117,7 +118,6 @@ public class NumberOfInversions {
         for (int i = low; i <= high; i++) {
             nums[i] = temp.get(i - low);
         }
-
         return count;
     }
 
@@ -125,8 +125,9 @@ public class NumberOfInversions {
         NumberOfInversions obj = new NumberOfInversions();
 
         int[] nums = { 0, 2, 2, 1 };
-
+        System.out.println(Arrays.toString(nums));
         System.out.println(obj.numberOfInversions(nums));
+        System.out.println(Arrays.toString(nums));
 
     }
 
