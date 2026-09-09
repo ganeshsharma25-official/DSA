@@ -13,28 +13,28 @@ public class UnionArray {
 
     }
 
-    private static int[] sortedArray(int[] arr1, int[] arr2) {
+    // private static int[] sortedArray(int[] arr1, int[] arr2) {
 
-        Set<Integer> resultSet = new HashSet<>();
+    // Set<Integer> resultSet = new HashSet<>();
 
-        for (int i = 0; i < arr1.length; i++) {
-            resultSet.add(arr1[i]);
-        }
-        for (int i = 0; i < arr2.length; i++) {
-            resultSet.add(arr2[i]);
-        }
+    // for (int i = 0; i < arr1.length; i++) {
+    // resultSet.add(arr1[i]);
+    // }
+    // for (int i = 0; i < arr2.length; i++) {
+    // resultSet.add(arr2[i]);
+    // }
 
-        Integer[] result = resultSet.toArray(new Integer[0]);
+    // Integer[] result = resultSet.toArray(new Integer[0]);
 
-        Arrays.sort(result);
+    // Arrays.sort(result);
 
-        int[] res = new int[result.length];
+    // int[] res = new int[result.length];
 
-        for (int i = 0; i < res.length; i++) {
-            res[i] = result[i];
-        }
-        return res;
-    }
+    // for (int i = 0; i < res.length; i++) {
+    // res[i] = result[i];
+    // }
+    // return res;
+    // }
 
     // optimized solution
     public static int[] sortedArrayOpti(int[] nums1, int[] nums2) {

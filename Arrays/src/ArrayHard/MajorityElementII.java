@@ -108,7 +108,7 @@ public class MajorityElementII {
 
     public static void main(String[] args) {
         int[] nums = { 1, 2, 1, 1, 3, 2 };
-        int[] nums2 = { 5, 5 };
+        // int[] nums2 = { 5, 5 };
         MajorityElementII obj = new MajorityElementII();
 
         System.out.println(obj.majorityElementTwoII(nums).toString());

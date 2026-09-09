@@ -2,7 +2,6 @@ package LamdaExpression;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 @FunctionalInterface
 interface A {
@@ -55,7 +54,7 @@ public class Demo {
     public static void main(String[] args) {
         List<Integer> nums = Arrays.asList(1, 5, 54, 23, 15);
 
-        Stream<Integer> data = nums.stream();
+        // Stream<Integer> data = nums.stream();
 
         // data.forEach(num -> System.out.println(num));
 
