@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
-
 /*
 Given an integer array nums of size n. Return all elements which appear more than n/3 times in the array. The output can be returned in any order.
 Example 1
@@ -113,6 +111,6 @@ public class MajorityElementII {
         int[] nums2 = { 5, 5 };
         MajorityElementII obj = new MajorityElementII();
 
-        System.out.println(obj.majorityElementTwoII(nums2).toString());
+        System.out.println(obj.majorityElementTwoII(nums).toString());
     }
 }
