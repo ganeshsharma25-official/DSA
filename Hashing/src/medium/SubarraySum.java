@@ -5,32 +5,32 @@ import java.util.Map;
 
 public class SubarraySum {
 
-    public static void main(String[] args) {
-        int[] nums = { 1, 2, 3 };
-        System.out.println(subarraySum(nums, 3));
-    }
-
-    public static int subarraySum(int[] nums, int k) {
-
+    public int subarraySum(int[] nums, int k) {
         int count = 0;
-        int preFix = 0;
+        int preSum = 0;
 
         Map<Integer, Integer> map = new HashMap<>();
 
         map.put(0, 1);
 
         for (int i = 0; i < nums.length; i++) {
-            preFix = preFix + nums[i];
+            preSum += nums[i];
 
-            int remove = preFix - k;
+            int remove = preSum - k;
 
-            count = count + map.getOrDefault(remove, 0);
+            count += map.getOrDefault(remove, 0);
 
-            map.put(preFix, map.getOrDefault(preFix, 0) + 1);
-
+            map.put(preSum, map.getOrDefault(preSum, 0) + 1);
         }
 
         return count;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = { 1, 2, 3 };
+        SubarraySum obj = new SubarraySum();
+        System.out.println(obj.subarraySum(nums, 3));
+
     }
 
 }
